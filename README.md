@@ -150,7 +150,7 @@ __Las preguntas de If o si porque es mas facil hacerlo con while___
 
 ## 14. Lista de verificación antes de entregar (Fase 5)
 
-- [si ] Llené las secciones 7 a 13 (no quedan `_____`)
+- [si ] Llené las secciones 7 a 13 (no quedan `_no____`)
 - [si ] No modifiqué las secciones 1 a 6 ni la receta de `RECETA.md`
 - [si ] Cada bloque de `main.cpp` tiene su comentario `// Paso N`
 - [si ] Mi programa compila sin advertencias
