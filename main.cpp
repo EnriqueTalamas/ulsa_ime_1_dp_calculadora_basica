@@ -9,6 +9,57 @@
 #include "utilerias.h"
 
 int main() {
+double numero1;
+double numero2;
+int opcion;
+std::cout << "Calculadora basica" << std::endl;
+std::cout << "Menu: 1) Suma  2) Resta  3) Multiplicacion  4) Division" << std::endl;
+std::cout << "Seleccione un numero del 1-4 para realizar su operacion: ";
+std::cin >> opcion;
+
+while (opcion < 1 || opcion > 4) {
+    std::cout << "Error, no existe esa opcion. Seleccione un numero del 1-4 para realizar su operacion: ";
+    std::cin >> opcion;
+}
+
+std::cout << "Seleccionaste la opcion " << opcion << std::endl;
+
+switch (opcion) {
+        case 1:
+            std::cout << "Ingrese el primer numero: ";
+            std::cin >> numero1;
+            std::cout << "Ingrese el segundo numero: ";
+            std::cin >> numero2;
+            std::cout << "El resultado de la suma es: " << (numero1 + numero2) << std::endl;
+            break;
+        case 2:
+            std::cout << "Ingrese el primer numero: ";
+            std::cin >> numero1;
+            std::cout << "Ingrese el segundo numero: ";
+            std::cin >> numero2;
+            std::cout << "El resultado de la resta es: " << (numero1 - numero2) << std::endl;
+            break;
+        case 3:
+            std::cout << "Ingrese el primer numero: ";
+            std::cin >> numero1;
+            std::cout << "Ingrese el segundo numero: ";
+            std::cin >> numero2;
+            std::cout << "El resultado de la multiplicacion es: " << (numero1 * numero2) << std::endl;
+            break;
+        case 4:
+            std::cout << "Ingrese el primer numero: ";
+            std::cin >> numero1;
+            std::cout << "Ingrese el segundo numero: ";
+            std::cin >> numero2;
+            if (numero2 == 0) {
+                std::cout << "Error: No se puede dividir entre cero." << std::endl;
+            } else {
+                std::cout << "El resultado de la division es: " << (static_cast<double>(numero1) / numero2) << std::endl;
+            }
+        }
+        
+
+
     // Variables (siempre inicializadas)
     // TODO: opcion, a, b, resultado y simbolo.
     //       ¿De qué tipo es cada una? Revisa la sección 2 de tu README.

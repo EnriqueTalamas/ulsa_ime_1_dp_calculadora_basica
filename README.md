@@ -54,105 +54,109 @@ g++ -Wall -Wextra -std=c++17 main.cpp -o calculadora
 ```
 
 ## 7. Ejemplo de ejecución (Fase 3)
-<!-- Pega aquí lo que muestra tu programa en pantalla con una división donde primero escribes 0 como segundo número. -->
+Calculadora basica
+Menu: 1) Suma  2) Resta  3) Multiplicacion  4) Division
+Seleccione un numero del 1-4 para realizar su operacion
+4
+Seleccionaste la opcion 4
+Ingrese el primer numero: 5
+Ingrese el segundo numero: 0
+Error, no se puede dividir entre cero
 
-```
-_____
-```
 
 ## 8. De la receta al código (Fase 3)
 <!-- Para cada paso de la receta, escribe la instrucción (o instrucciones) de C++ que lo implementa. -->
 
 | Paso de la receta | Instrucción de C++ que lo implementa |
 |---|---|
-| 1 y 2. Título y menú | _____ |
-| 3. Leer y validar la opción | _____ |
-| 4 y 5. Leer `a` y `b` | _____ |
-| 6. Validar el divisor | _____ |
-| 7. Decisión múltiple (un `case`) | _____ |
-| 8. Mostrar el resultado | _____ |
+| 1 y 2. Título y menú | __std::cout <<"  "<<endl;___ |
+| 3. Leer y validar la opción | __std::cin >>___ |
+| 4 y 5. Leer `a` y `b` | __int leerEntero___ |
+| 6. Validar el divisor | __(static_cast<double>(numero1) / numero2)___ |
+| 7. Decisión múltiple (un `case`) | _switch, case y el brake____ |
+| 8. Mostrar el resultado | _<< (numero1 + numero2)____ |
 
 **¿Hubo algún paso de la receta que te costó traducir a C++? ¿Cuál y por qué?**
-_____
+__Si el paso 6 porque no lograba que se repitiera la funcion___
 
 ## 9. Experimentos (Fase 3)
 
 **Experimento A: sin el `break` del `case 1`, ¿qué mostró el programa con 8 + 5? ¿Qué te dijo el compilador? ¿Por qué pasó?**
-_____
+_Mostro 3, paso porque continuo con el siguiente caso____
 
 **Experimento B: sin la validación del Paso 6, ¿qué mostró el programa con 5 / 0? ¿Tiene sentido?**
-_____
+_Marco error por que no es posible la division de 5/0.____
 
 **Experimento C (opcional): con `a` y `b` de tipo `int`, ¿qué resultado dio 7 / 2? ¿Te avisó el compilador?**
-_____
+__mostro 3 y no me aviso de nada el compilador.___
 
 ## 10. Tabla de pruebas (Fase 4)
 
 | Caso | Entradas (opción, a, b) | Esperado | Obtenido | ¿Pasó? |
 |---|---|---|---|---|
-| Suma | 1, 8, 5 | 8 + 5 = 13 | _____ | _____ |
-| Resta negativa | 2, 3, 5 | 3 - 5 = -2 | _____ | _____ |
-| Multiplicación con decimales | 3, 2.5, 4 | 2.5 * 4 = 10 | _____ | _____ |
-| Multiplicación con negativo | 3, -3, 4 | -3 * 4 = -12 | _____ | _____ |
-| División | 4, 7, 2 | 7 / 2 = 3.5 | _____ | _____ |
-| Dividendo cero | 4, 0, 5 | 0 / 5 = 0 | _____ | _____ |
-| Divisor cero | 4, 5, 0 (luego 2) | vuelve a pedir `b`; 5 / 2 = 2.5 | _____ | _____ |
-| Suma con cero | 1, 5, 0 | 5 + 0 = 5 (**no** vuelve a pedir `b`) | _____ | _____ |
-| Opción fuera de rango | 5 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | _____ | _____ |
-| Opción cero | 0 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | _____ | _____ |
-| Opción decimal | 2.5 (luego 2), 3, 5 | `leerEntero` vuelve a pedir; 3 - 5 = -2 | _____ | _____ |
-| Opción con texto | `suma` (luego 1), 8, 5 | `leerEntero` vuelve a pedir; 8 + 5 = 13 | _____ | _____ |
-| Número con texto | 1, `abc` (luego 8), 5 | `leerDecimal` vuelve a pedir; 8 + 5 = 13 | _____ | _____ |
-| Caso propio 1 | _____ | _____ | _____ | _____ |
-| Caso propio 2 | _____ | _____ | _____ | _____ |
+| Suma | 1, 8, 5 | 8 + 5 = 13 | __13___ | __si___ | 
+| Resta negativa | 2, 3, 5 | 3 - 5 = -2 | ___-2__ | __si___ |
+| Multiplicación con decimales | 3, 2.5, 4 | 2.5 * 4 = 10 | ___10__ | ___si__ |
+| Multiplicación con negativo | 3, -3, 4 | -3 * 4 = -12 | ____-12_ | __si___ |
+| División | 4, 7, 2 | 7 / 2 = 3.5 | ___3.5__ | __si___ |
+| Dividendo cero | 4, 0, 5 | 0 / 5 = 0 | ___error__ | ___si__ |
+| Divisor cero | 4, 5, 0 (luego 2) | vuelve a pedir `b`; 5 / 2 = 2.5 | ____2.5_ | _si____ |
+| Suma con cero | 1, 5, 0 | 5 + 0 = 5 (**no** vuelve a pedir `b`) | __escribe otro numero___ | __si___ |
+| Opción fuera de rango | 5 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | __13___ | __si___ |
+| Opción cero | 0 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | __13___ | __si___ |
+| Opción decimal | 2.5 (luego 2), 3, 5 | `leerEntero` vuelve a pedir; 3 - 5 = -2 | __-2___ | _si____ |
+| Opción con texto | `suma` (luego 1), 8, 5 | `leerEntero` vuelve a pedir; 8 + 5 = 13 | __13___ | ___si__ |
+| Número con texto | 1, `abc` (luego 8), 5 | `leerDecimal` vuelve a pedir; 8 + 5 = 13 | __13___ | __si___ |
+| Caso propio 1 | ___sumar 100,  200__ | __300___ | _300____ | ___si__ |
+| Caso propio 2 | _dividir 500 / 45 ____ | ___11.1111__ | ___11.1111__ | ___si__ |
 
 ## 11. Bitácora de mejoras (Fase 4)
 
 | # | ¿Qué falló o qué quise mejorar? | ¿Qué cambié? | ¿Funcionó? |
 |---|---|---|---|
-| 1 | _____ | _____ | _____ |
-| 2 | _____ | _____ | _____ |
+| 1 | __Que cuando escribiera un numero que no es valido de las opciones volviera a preguntar.___ | __con un while___ | __si__ |
+| 2 | _Mejorar la forma que aparece en la pantalla____ | ___mover los renglones __ | __si___ |
 
 **¿Encontré algo que la receta no contemplaba? ¿Qué?**
-_____
+_si que repita las funciones si es que no son correctas____
 
-**Reto elegido (opcional):** _____
+**Reto elegido (opcional):** _Identificar cuando va un while un for y un if____
 
 ## 12. Dudas para el profesor (Fase 3)
 
 | Duda | Lo que ya intenté |
 |---|---|
-| _____ | _____ |
+| __Para que es el if else___ | ___para poner una condicion en un entonces__ |
 
 ## 13. Reflexión final
 
 **¿Qué aprendí con esta práctica?**
-_____
+_A utilizar el while____
 
 **Ahora que terminé, ¿qué cambiaría de mi proceso?**
-_____
+___El usar un if else pra facilitar e codigo__
 
 **¿Qué fue lo más difícil y cómo lo resolví?**
-_____
+__El repetir una pregunta si da una respuesta invalida___
 
 **¿Qué pregunta me quedó sin responder?**
-_____
+__Cuando se utiliza un else?___
 
 **¿Fue más fácil programar a partir de una receta ajena que de la mía? ¿Por qué?**
-_____
+___Si, porque me puedo dar cuenta de cosas que no tenia pensadas__
 
 **Si yo hubiera diseñado la receta, ¿qué le cambiaría?**
-_____
+__Las preguntas de If o si porque es mas facil hacerlo con while___
 
 ## 14. Lista de verificación antes de entregar (Fase 5)
 
-- [ ] Llené las secciones 7 a 13 (no quedan `_____`)
-- [ ] No modifiqué las secciones 1 a 6 ni la receta de `RECETA.md`
-- [ ] Cada bloque de `main.cpp` tiene su comentario `// Paso N`
-- [ ] Mi programa compila sin advertencias
-- [ ] Probé todos los casos de la tabla
-- [ ] Hice los Experimentos A y B y dejé el código correcto al terminar
-- [ ] No modifiqué `utilerias.h`
-- [ ] Hice al menos 4 commits con mensajes claros
-- [ ] Hice `git push` y verifiqué mi fork en GitHub
-- [ ] Entregué el enlace de mi fork en Classroom
+- [si ] Llené las secciones 7 a 13 (no quedan `_____`)
+- [si ] No modifiqué las secciones 1 a 6 ni la receta de `RECETA.md`
+- [si ] Cada bloque de `main.cpp` tiene su comentario `// Paso N`
+- [si ] Mi programa compila sin advertencias
+- [si ] Probé todos los casos de la tabla
+- [si ] Hice los Experimentos A y B y dejé el código correcto al terminar
+- [si ] No modifiqué `utilerias.h`
+- [si ] Hice al menos 4 commits con mensajes claros
+- [si ] Hice `git push` y verifiqué mi fork en GitHub
+- [si ] Entregué el enlace de mi fork en Classroom
